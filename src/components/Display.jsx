@@ -8,36 +8,6 @@ export default class Display extends Component {
             type: "All"
         }
     }
-    typeAll = () => {
-        this.setState({
-            trips: [...this.props.trips],
-            type: "All"
-        })
-    }
-    typeTrek = () => {
-        this.setState({
-            trips: [...this.props.trips.filter((trip) => {
-                return trip.type === "trek"
-            })],
-            type: "Trek"
-        })
-    }
-    typeClub = () => {
-        this.setState({
-            trips: [...this.props.trips.filter((trip) => {
-                return trip.type === "club"
-            })],
-            type: "Club"
-        })
-    }
-    typeTropic = () => {
-        this.setState({
-            trips: [...this.props.trips.filter((trip) => {
-                return trip.type === "tropic"
-            })],
-            type: "Tropic"
-        })
-    }
     render() {
         return (
             <>
@@ -60,13 +30,6 @@ export default class Display extends Component {
                         }
                     </tbody>
                 </table>
-                <div className="filter">
-                    Filter by:
-                    <span onClick={this.typeAll}>All</span><span className="symbol">&#9898;</span>
-                    <span onClick={this.typeTrek}>Treks</span><span className="symbol">&#9898;</span>
-                    <span onClick={this.typeClub}>Clubs</span><span className="symbol">&#9898;</span>
-                    <span onClick={this.typeTropic}>Tropics</span>
-                </div>
             </>
         )
     }
